@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte01);
+
+    --fonte01: 'Inter Tight', sans-serif;
+    --fonte02: 'Montserrat', display;    
+
+    --cor01: #fff;
+    --cor02: #000;
+
+    --cor_primaria: #f19626;
+    --cor_secundaria: #b96b0b;
+
+    --cor_cinza: #acacac;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.msg {
+    background-color: #d4edda;
+    color: #155724;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid #c3e6cb;
+}
