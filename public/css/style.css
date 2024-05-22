@@ -101,7 +101,6 @@ img, #info-container img {
 
 #cards-container {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -139,7 +138,7 @@ img, #info-container img {
 }
 
 #event-create-container form {
-    width: 50%;
+    width: 40%;
     background-color: var(--cor01);
     margin: auto;
     padding: 1.5rem;
@@ -159,8 +158,29 @@ img, #info-container img {
     margin: 5px 0;
 }
 
+.form-buscar-evento {
+    display: flex;
+}
+
+.form-buscar-evento input {
+    border-radius: 5px 0px 0px 5px;
+}
+
+.form-buscar-evento button {
+    display: flex;
+    width: 10%;
+    justify-content: center;
+    align-items: center;
+    border-radius:  0px 5px 5px 0px;
+    transition: .2s;
+}
+
+.form-buscar-evento .material-symbols-outlined {
+    color: var(--cor01);
+}
+
 .form-group input {
-    font-size: 12px;
+    font-size: 16px;
 }
 
 footer {
@@ -217,4 +237,20 @@ footer p {
 
 .material-symbols-outlined {
     color: var(--cor_primaria);
+}
+
+.checkbox-label {
+    font-weight: normal!important;
+}
+
+.itens-list li{
+    display: flex;
+    margin: 0.5rem 0;
+    align-items: center;
+    list-style-type: none;
+}
+
+ul {
+    padding: 0.2rem 0;
+    margin: 0;
 }

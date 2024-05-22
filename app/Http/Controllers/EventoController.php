@@ -8,8 +8,17 @@ use Illuminate\Http\Request;
 class EventoController extends Controller
 {
     public function index() {
-        $eventos = Evento::all();
-        return view('welcome', ['eventos' => $eventos]);
+        // $eventos = Evento::all();
+        $busca = request('search');
+        if($busca) {
+            $eventos = Evento::where([
+                ['titulo', 'like', '%'.$busca.'%']
+            ])->get();
+        } else {
+            $eventos = Evento::all();
+        }
+
+        return view('welcome', ['eventos' => $eventos, 'search' => $busca]);
     }
 
     public function criar() {
@@ -23,6 +32,8 @@ class EventoController extends Controller
         $evento->desc = $request->desc;
         $evento->localidade = $request->localidade;
         $evento->privado = $request->privado;
+        $evento->itens = $request->itens;
+        $evento->data_evento = $request->data_evento;
 
     
         if($request->hasFile('image') && $request->file('image')->isValid()) {
@@ -32,8 +43,6 @@ class EventoController extends Controller
             $nome_imagem = md5($query_img->getClientOriginalName() . strtotime("now")) . "." . $extensao;
             $query_img->move(public_path('img/eventos'), $nome_imagem);
             $evento->img = $nome_imagem;
-        } else {
-            $evento->img = 'default.jpg';
         }
     
         $evento->save();
