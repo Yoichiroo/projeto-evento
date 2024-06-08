@@ -62,4 +62,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function eventos() {
+        return $this->hasMany('App\Models\Evento');
+    }
+
+    public function eventosParticipantes() {
+        return $this->belongsToMany('App\Models\Evento');
+    }
 }

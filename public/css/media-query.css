@@ -1,7 +1,11 @@
 @charset "UTF-8";
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     .flex-evento {
         width: 400px;
+    }
+
+    #search-container {
+        background-image: url('../img/banner_celular.jpg');
     }
 }

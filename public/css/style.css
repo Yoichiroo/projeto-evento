@@ -254,3 +254,62 @@ ul {
     padding: 0.2rem 0;
     margin: 0;
 }
+
+.btn-acoes {
+    display: inline-block;
+    width: 120px;
+    background-color: gray;
+    color: var(--cor01);
+    padding: 0.5rem;
+    text-decoration: none;
+    text-align: center;
+    margin: 0.1rem 0.5rem;
+    border-radius: 5px;
+}
+
+table {
+    padding: 0.5rem;
+}
+
+.table tbody  {
+    vertical-align: middle;
+}
+
+.edit {
+    background-color: var(--cor_terciaria);
+}
+
+.delete {
+    background-color: red;
+}
+
+.content {
+    background-color: var(--cor_cinza);
+}
+
+.dashboard-titulo-container {
+    background-color: var(--cor01);
+    margin: 0.5rem auto 0 auto;
+    padding: 0.5rem;
+}
+
+.dashboard-container-eventos form {
+    display: inline-block;
+}
+
+.branco {
+    color: var(--cor01);
+}
+
+.flex-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.nenhum-evento {
+    background-color: var(--cor01);
+    padding: 0.5rem;
+    margin: 0 0 0.5rem 0;
+}

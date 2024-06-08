@@ -12,8 +12,8 @@
             <h1>{{$evento->titulo}}</h1>
             <p class="data-evento"><span class="material-symbols-outlined">event</span>{{date('d/m/Y'), strtotime($evento->data_evento)}}</p>
             <p class="cidade-evento"><span class="material-symbols-outlined">location_on</span>{{ $evento->localidade }}</p>
-            <p class="participantes-evento"><span class="material-symbols-outlined">groups</span>0 participantes</p>
-            <p class="dono-evento"><span class="material-symbols-outlined">star</span>Dono do Evento</p>
+            <p class="participantes-evento"><span class="material-symbols-outlined">groups</span>{{ $evento->users->count() }} Participantes</p>
+            <p class="dono-evento"><span class="material-symbols-outlined">star</span>{{ $dono_evento['name'] }}</p>
 
             <div class="desc-evento">   
                 <h3>Sobre o evento:</h3>
@@ -26,15 +26,24 @@
                 @if ($evento->itens == null)
                     <p>O evento não conta com itens de infraestrutura.</p>
                 @else
-                    @foreach ($evento->itens ?? [] as $item)
+                    @php
+                        $itensArray = json_decode($evento->itens, true);
+                    @endphp
+
+                    @foreach ($itensArray as $item)
                         <li>
                             <i class="material-symbols-outlined">check</i>
-                            <span>{{$item}}</span>
+                            <span>{{ $item }}</span>
                         </li>
                     @endforeach
                 @endif
             </ul>
-            <a href="#" class="btn btn-primary" id="confirmar-presenca">Confirmar Presença</a>
+
+            <form action="/eventos/join/{{$evento->id}}" method="POST">
+                @csrf
+                <a href="" class="btn btn-primary" id="confirmar-presenca" onclick="event.preventDefault() 
+                this.closest('form').submit()">Confirmar Presença</a>
+            </form>
         </div>
     </div>
 </div>

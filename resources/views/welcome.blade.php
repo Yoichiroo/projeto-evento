@@ -19,7 +19,7 @@
             <h2>Próximos Eventos</h2>
             <p>Veja os eventos dos próximos dias:</p>
             @endif
-        </div>
+        </div>  
         <div id="cards-container" class="row">
             @foreach ($eventos as $evento)
                 <div class="card col-md-3">
