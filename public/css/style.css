@@ -297,6 +297,10 @@ table {
     display: inline-block;
 }
 
+.dashboard-container-eventos p {
+    background-color: var(--cor01);
+}
+
 .branco {
     color: var(--cor01);
 }

@@ -24,7 +24,7 @@
                         <tr>
                             <td scope="row">{{ $loop -> index + 1 }}</td>
                             <td><a href="/eventos/{{$evento->id}}">{{ $evento -> titulo }}</a></td>
-                            <td>0</td>
+                            <td>{{$evento->users->count()}}</td>
                             <td>
                                 <a href="/eventos/edit/{{$evento->id}}" class="btn-acoes edit"><div class="flex-button"><i class="material-symbols-outlined branco">edit</i>Editar</div></a> 
                                 <form action="/eventos/{{ $evento->id }}" method="POST">
@@ -36,12 +36,42 @@
                         </tr>
                     @endforeach
                 </tbody>
-                
             </table>
         @else
             <div class="nenhum-evento">
                 <p>Você ainda não tem eventos, <a href="/eventos/criar">Criar um evento</a></p>
             </div>
+        @endif
+    </div>
+    <div class="col-md-10 offset-md-1 dashboard-titulo-container">
+        <h1>Eventos que estou participando</h1>
+    </div>
+    <div class="col-md-10 offset-md-1 dashboard-container-eventos">
+        @if($evento_participante->isNotEmpty())
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Participantes</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($evento_participante as $evento)
+                        <tr>
+                            <td scope="row">{{ $loop->index + 1 }}</td>
+                            <td><a href="/eventos/{{ $evento->id }}">{{ $evento->titulo }}</a></td>
+                            <td>{{ $evento->users->count() }}</td>
+                            <td>    
+                                <a href="#">Sair do evento</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        @else   
+            <p>Você ainda não está participando de nenhum evento, veja <a href="/">todos os eventos</a></p>
         @endif
     </div>
 </div>

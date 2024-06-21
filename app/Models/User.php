@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class User extends Authenticatable
 {
@@ -67,7 +68,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Evento');
     }
 
-    public function eventosParticipantes() {
-        return $this->belongsToMany('App\Models\Evento');
+    
+    public function eventosParticipantes(): BelongsToMany
+    {
+        return $this->belongsToMany(Evento::class);
     }
 }
