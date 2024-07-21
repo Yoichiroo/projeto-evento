@@ -13,3 +13,4 @@
 ![image](https://github.com/Yoichiroo/projeto-evento/assets/109477475/b8dc5bd7-8f71-4346-9325-921268cb1094)
 
 <p>Todas as imagens aqui utilizadas são oriundas de banco de imagens gratuitos.</p>
+<p>A plataforma conta com um sistema de autenticação onde o usuário tem seu próprio login e senha, além de poder ver uma tabela de eventos criados e eventos nos quais ele confirmou presença. Podem ser tanto dele mesmo quanto de outros usuários.</p>
